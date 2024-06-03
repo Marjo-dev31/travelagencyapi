@@ -1,0 +1,30 @@
+version: '2'
+services:
+  webagency:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgresagency
+    working_dir: /app
+    environment:
+      - DB_NAME=travelagency
+      - DB_USER=admin
+      - DB_PW=admin
+      - DB_HOST=postgresagency
+      - DB_PORT=5432
+      - DB_SCHAME=public
+
+
+  postgresagency:
+    image: postgres
+    container_name: 
+    environment:
+      POSTGRES_USER: admin 
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: travelagency
+    ports:
+      - 5432:5432
