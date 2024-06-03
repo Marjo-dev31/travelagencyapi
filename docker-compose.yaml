@@ -16,12 +16,12 @@ services:
       - DB_PW=admin
       - DB_HOST=postgresagency
       - DB_PORT=5432
-      - DB_SCHAME=public
+      - DB_SCHEMA=public
 
 
   postgresagency:
     image: postgres
-    container_name: 
+    container_name: postgresagency
     environment:
       POSTGRES_USER: admin 
       POSTGRES_PASSWORD: admin

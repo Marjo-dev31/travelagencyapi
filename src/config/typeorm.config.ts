@@ -7,7 +7,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PW,
   database: process.env.DB_NAME,
-  schema: process.env.DB_SCHAME,
+  schema: process.env.DB_SCHEMA,
   autoLoadEntities: false,
   migrationsTableName: 'migrations',
   migrations: ['dist/migrations/*.js'],
